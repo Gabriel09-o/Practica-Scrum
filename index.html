@@ -7,6 +7,47 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <main>
+  <header>
+    <h1>CoworkSpace Express</h1>
+    <p class="subtitulo">Sistema de reservas de salas de coworking</p>
+  </header>
+
+  <!-- COW-2: Consultar sala -->
+  <section aria-labelledby="t-sala">
+    <h2 id="t-sala">Sala disponible</h2>
+    <p class="sala-nombre">Sala Focus A</p>
+    <p class="sala-detalle">Horario de reservas: 8:00 a 19:00</p>
+    <div class="linea-tiempo" id="lineaTiempo" aria-hidden="true"></div>
+    <div class="escala" aria-hidden="true"><span>8:00</span><span>11:00</span><span>14:00</span><span>17:00</span><span>19:00</span></div>
+    <div class="leyenda">Las franjas coloreadas ya están reservadas.</div>
+  </section>
+
+  <!-- COW-3: Realizar una reserva -->
+  <section aria-labelledby="t-reserva">
+    <h2 id="t-reserva">Reservar la sala</h2>
+    <form id="formulario" novalidate>
+      <div class="campos">
+        <div>
+          <label for="inicio">Hora de inicio</label>
+          <input type="time" id="inicio" name="inicio" min="08:00" max="19:00">
+        </div>
+        <div>
+          <label for="fin">Hora de finalización</label>
+          <input type="time" id="fin" name="fin" min="08:00" max="19:00">
+        </div>
+      </div>
+      <p class="ayuda">Usa formato de 24 horas, entre 08:00 y 19:00.</p>
+      <button type="submit">Reservar</button>
+    </form>
+    <div id="mensaje" role="status" aria-live="polite"></div>
+  </section>
+
+  <section aria-labelledby="t-lista">
+    <h2 id="t-lista">Reservas de la sesión</h2>
+    <ul id="lista"></ul>
+  </section>
+</main>
 <script src="index.js"></script>
 </body>
 </html>
